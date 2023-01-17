@@ -103,7 +103,7 @@ const Home = () => (
         </Heading>
         <BioSection>
           <BioYear>2004</BioYear>
-          Born in Toronoto, Canada
+          Born in Toronto, Canada
         </BioSection>
         <BioSection>
           <BioYear>2022</BioYear>
