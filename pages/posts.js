@@ -12,6 +12,10 @@ import thumbFinancialGoal from '../public/images/contents/blog-financial-goal.pn
 import thumbHowToPriceYourself from '../public/images/contents/blog-how-to-price-yourself.jpg'
 import thumb50xFaster from '../public/images/contents/youtube-50x-faster.jpg'
 
+import thumbBlogSite from '../public/images/works/blog-site.jpg'
+import thumbNatoursSite from '../public/images/works/natours-app.jpg'
+import thumbAdminPanel from '../public/images/works/admin-app.jpg'
+
 const Posts = () => (
   <Layout title="Posts">
     <Container>
@@ -22,54 +26,19 @@ const Posts = () => (
       <Section delay={0.1}>
         <SimpleGrid columns={[1, 2, 2]} gap={6}>
           <GridItem
-            title="How to build a portfolio website"
-            thumbnail={thumbPortfolio}
-            href="https://www.youtube.com/watch?v=bsMZgXzC9AA"
+            title="How to be an Admin - Admin Control"
+            thumbnail={thumbAdminPanel}
+            href="https://github.com/nandanjp/Admin-Analytics"
           />
           <GridItem
-            title="How to take notes in Markdown efficiently with Inkdrop"
-            thumbnail={thumbHotToUseInkdrop}
-            href="https://www.youtube.com/watch?v=-qBavwqc_mY"
+            title="Natours - AllTrails like Website to make you fall in love with Nature"
+            thumbnail={thumbNatoursSite}
+            href="https://github.com/nandanjp/Natours"
           />
           <GridItem
-            title="My Fish workflow"
-            thumbnail={thumbFishWorkflow}
-            href="https://www.youtube.com/watch?v=KKxhf50FIPI"
-          />
-          <GridItem
-            title="My desk setup (Late 2020)"
-            thumbnail={thumbMyDeskSetup}
-            href="https://www.youtube.com/watch?v=1OFDMwDlnOE"
-          />
-        </SimpleGrid>
-      </Section>
-
-      <Section delay={0.3}>
-        <SimpleGrid columns={[1, 2, 2]} gap={6}>
-          <GridItem
-            title="How I’ve Attracted The First 500 Paid Users For My SaaS That Costs $5/mo"
-            thumbnail={thumb500PaidUsers}
-            href="https://blog.inkdrop.app/how-ive-attracted-the-first-500-paid-users-for-my-saas-that-costs-5-mo-7a5b94b8e820"
-          />
-          <GridItem
-            title="I stopped setting a financial goal for my SaaS"
-            thumbnail={thumbFinancialGoal}
-            href="https://blog.inkdrop.app/i-stopped-setting-a-financial-goal-for-my-saas-a92c3db65506"
-          />
-        </SimpleGrid>
-      </Section>
-
-      <Section delay={0.5}>
-        <SimpleGrid columns={[1, 2, 2]} gap={6}>
-          <GridItem
-            title="How to Price Yourself as a Freelance Developer"
-            thumbnail={thumbHowToPriceYourself}
-            href="https://blog.inkdrop.app/how-to-price-yourself-as-a-freelance-developer-3453dfd59d91"
-          />
-          <GridItem
-            title="I made my React Native app 50x faster"
-            thumbnail={thumb50xFaster}
-            href="https://www.youtube.com/watch?v=vj723NlrIQc"
+            title="Flexing CSS and SASS"
+            thumbnail={thumbBlogSite}
+            href="https://github.com/nandanjp/Flexing-CSS"
           />
         </SimpleGrid>
       </Section>
