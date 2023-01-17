@@ -13,6 +13,7 @@ const VoxelDog = () => {
   const [loading, setLoading] = useState(true)
   const refRenderer = useRef()
   const urlDogGLB = (process.env.NODE_ENV === 'production' ? 'https://sketchfab.com/3d-models/macintosh-plus-1984-e6aa840ee8554dc680f10493bd587d50?utm_medium=embed&utm_campaign=share-popup&utm_content=e6aa840ee8554dc680f10493bd587d50' : '') + '/dog.glb'
+  urlDogGLB = '/dog.glb';
 
   const handleWindowResize = useCallback(() => {
     const { current: renderer } = refRenderer
