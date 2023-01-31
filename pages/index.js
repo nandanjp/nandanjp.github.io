@@ -44,7 +44,7 @@ const Home = () => (
           <Heading as="h2" variant="page-title">
             Nandan Patel
           </Heading>
-          <p>Aspiring Software Engineering in Fullstack and Game dev</p>
+          <p>Aspiring Software Engineer in Fullstack and Game dev</p>
         </Box>
         <Box
           flexShrink={0}
