@@ -30,3 +30,5 @@ $PROJECT_ROOT
 ## License
 
 MIT License.
+
+This website is designed based on [Takuya Matsuyama's](https://www.craftz.dog/) website.
