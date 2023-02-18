@@ -4,7 +4,7 @@
 
 ## Landing Page
 
-[Landing Page](./doc/thumbnail.png)]
+![Landing Page](./doc/thumbnail.png)]
 
 ## Stack
 
