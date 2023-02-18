@@ -54,7 +54,7 @@ const Posts = () => (
       <Section delay={0.3}>
         <SimpleGrid columns={[1, 2, 2]} gap={6}>
           <GridItem
-            title="Nothing but a game.... How so how philosophically incompetently said"
+            title="Nothing but a game.... Wow how philosophically incompetent"
             thumbnail={thumbNierAutomata}
             href="/progress"
           />

@@ -22,7 +22,7 @@ const Works = () => (
             thumbnail={thumbAdminPanel}
           >
             A FullStack Web App built using the MERN stack, complete with many
-            features typical of that found in a modern admin panel.
+            features typical of those found in a modern admin panel.
           </WorkGridItem>
         </Section>
       </SimpleGrid>
@@ -42,8 +42,8 @@ const Works = () => (
             title="Natours"
           >
             A full-stack application made in vanilla javascript, complete with
-            an express backend framework, a custom REST API that utilizes CRUD
-            operations to communicate with a MongoDB server.
+            an express backend framework and a custom REST API that utilizes
+            CRUD operations to communicate with a MongoDB server.
           </WorkGridItem>
         </Section>
         <Section delay={0.5}>
@@ -52,8 +52,10 @@ const Works = () => (
             thumbnail={thumbBlogSite}
             title="Nandan's Thoughts - Personal Blog"
           >
-            A personal blog site created use Next.js and TailwindCSS. The blogs
-            were created to express my reviews of various media.
+            A personal blog site created using Next.js and TailwindCSS. The
+            blogs were created to express my reviews of various media. Although
+            incomplete, it will one day be a collection of all of my thoughts on
+            the stories I have chosen to view over the years....
           </WorkGridItem>
         </Section>
       </SimpleGrid>

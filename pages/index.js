@@ -84,9 +84,6 @@ const Home = () => (
           interests mainly living in Game Development, Game Engine Design and
           Front-end development, I am willing to take on whatever roles will
           make my goals achievable.
-          {/*<NextLink href="/works/inkdrop" passHref scroll={false}>
-            <Link target="_blank">Blog</Link>
-</NextLink>*/}
         </Paragraph>
         <Box align="center" my={4}>
           <NextLink href="/works" passHref scroll={false}>
@@ -147,7 +144,7 @@ const Home = () => (
         <Box align="center" my={4}>
           <NextLink href="/posts" passHref scroll={false}>
             <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-              Popular posts
+              Posts
             </Button>
           </NextLink>
         </Box>

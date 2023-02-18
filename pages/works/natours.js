@@ -17,7 +17,7 @@ const Work = () => (
       <Title>
         Natours <Badge>2020-</Badge>
       </Title>
-      <P>A full-stack e-commerce site all about Nature and its beauty :/</P>
+      <P>A full-stack e-commerce site all about Nature and its beauty {':)'}</P>
       <List ml={4} my={4}>
         <ListItem>
           <Meta>Website</Meta>

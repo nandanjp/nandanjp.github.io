@@ -44,22 +44,18 @@ const VoxelBall = () => {
       const scene = new THREE.Scene()
 
       const target = new THREE.Vector3(-0.5, 1.2, 0)
-      const initialCameraPosition = new THREE.Vector3(
-        5 * Math.sin(0.2 * Math.PI),
-        10,
-        5 * Math.cos(0.2 * Math.PI)
-      )
+      const initialCameraPosition = new THREE.Vector3(10, 10, 10)
 
       // 640 -> 240
       // 8   -> 6
-      const scale = scH * 0.0001 + 4.8
+      const scale = scW * 0.00001 + 6.0
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,
         scale,
         -scale,
         0.01,
-        50000
+        500
       )
       camera.position.copy(initialCameraPosition)
       camera.lookAt(target)
