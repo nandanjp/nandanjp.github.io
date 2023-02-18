@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Text, useColorModeValue } from '@chakra-ui/react'
-import FootprintIcon from './icons/footprint'
 import styled from '@emotion/styled'
+import PenIcon from './icons/penicon'
 
 const LogoBox = styled.span`
   font-weight: bold;
@@ -10,14 +10,15 @@ const LogoBox = styled.span`
   align-items: center;
   height: 20px;
   line-height: 20px;
-  padding: 10px;
+  padding: 8px;
 
   > svg {
+    margin-right: 5px;
     transition: 200ms ease;
   }
 
   &:hover > svg {
-    transform: rotate(20deg);
+    transform: rotate(-20deg);
   }
 `
 
@@ -26,7 +27,7 @@ const Logo = () => {
     <Link href="/" scroll={false} legacyBehavior>
       <a>
         <LogoBox>
-          <FootprintIcon />
+          <PenIcon />
           <Text
             color={useColorModeValue('gray.800', 'whiteAlpha.900')}
             fontFamily='M PLUS Rounded 1c", sans-serif'

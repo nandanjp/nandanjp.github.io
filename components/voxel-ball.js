@@ -2,13 +2,13 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { loadGLTFModel } from '../lib/model'
-import { DogSpinner, DogContainer } from './voxel-dog-loader'
+import { BallSpinner, BallContainer } from './voxel-ball-loader'
 
 function easeOutCirc(x) {
   return Math.sqrt(1 - Math.pow(x - 1, 4))
 }
 
-const VoxelDog = () => {
+const VoxelBall = () => {
   const refContainer = useRef()
   const [loading, setLoading] = useState(true)
   const refRenderer = useRef()
@@ -45,14 +45,14 @@ const VoxelDog = () => {
 
       const target = new THREE.Vector3(-0.5, 1.2, 0)
       const initialCameraPosition = new THREE.Vector3(
-        20 * Math.sin(0.2 * Math.PI),
+        5 * Math.sin(0.2 * Math.PI),
         10,
-        20 * Math.cos(0.2 * Math.PI)
+        5 * Math.cos(0.2 * Math.PI)
       )
 
       // 640 -> 240
       // 8   -> 6
-      const scale = scH * 0.005 + 4.8
+      const scale = scH * 0.0001 + 4.8
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,
@@ -88,7 +88,7 @@ const VoxelDog = () => {
 
         if (frame <= 100) {
           const p = initialCameraPosition
-          const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 20
+          const rotSpeed = -easeOutCirc(frame / 150) * Math.PI * 20
 
           camera.position.y = 10
           camera.position.x =
@@ -119,8 +119,10 @@ const VoxelDog = () => {
   }, [handleWindowResize])
 
   return (
-    <DogContainer ref={refContainer}>{loading && <DogSpinner />}</DogContainer>
+    <BallContainer ref={refContainer}>
+      {loading && <BallSpinner />}
+    </BallContainer>
   )
 }
 
-export default VoxelDog
+export default VoxelBall

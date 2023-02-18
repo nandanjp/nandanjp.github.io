@@ -3,9 +3,9 @@ import dynamic from 'next/dynamic'
 import NavBar from '../navbar'
 import { Box, Container } from '@chakra-ui/react'
 import Footer from '../footer'
-import VoxelDogLoader from '../voxel-dog-loader'
+import VoxelDogLoader from '../voxel-ball-loader'
 
-const LazyVoxelDog = dynamic(() => import('../voxel-dog'), {
+const LazyVoxelDog = dynamic(() => import('../voxel-ball'), {
   ssr: false,
   loading: () => <VoxelDogLoader />
 })

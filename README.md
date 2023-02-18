@@ -2,11 +2,9 @@
 
 [http://github.nandanjp.io/](http://github.nandanjp.io/)
 
-## Tutorial
+## Landing Page
 
-Watch how I built this website on YouTube:
-
-[![YouTube thumbnail](./doc/thumb.png)](https://www.youtube.com/watch?v=bSMZgXzC9AA)
+[Landing Page](./doc/thumbnail.png)]
 
 ## Stack
 

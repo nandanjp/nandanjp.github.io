@@ -10,11 +10,14 @@ import {
   Menu,
   MenuItem,
   MenuList,
+  MenuGroup,
   MenuButton,
   IconButton,
-  useColorModeValue
+  useColorModeValue,
+  SlideFade,
+  Collapse
 } from '@chakra-ui/react'
-import { HamburgerIcon } from '@chakra-ui/icons'
+import { HamburgerIcon, ExternalLinkIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
 import { IoLogoGithub } from 'react-icons/io5'
 
@@ -23,15 +26,31 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
   const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
   return (
     <NextLink href={href} passHref scroll={false}>
-      <Link
-        p={2}
-        bg={active ? 'grassTeal' : undefined}
-        color={active ? '#202023' : inactiveColor}
-        target={target}
-        {...props}
-      >
-        {children}
-      </Link>
+      {active ? (
+        <SlideFade in={active} offsetY="-50px" offsetX="50px" delay={0.1}>
+          <Link
+            p={(3, 2, 3, 2)}
+            bg={'grassTeal'}
+            color={'#fffff0'}
+            target={target}
+            {...props}
+            rounded={'md'}
+            shadow={'md'}
+          >
+            {children}
+          </Link>
+        </SlideFade>
+      ) : (
+        <Link
+          p={2}
+          bg={undefined}
+          color={inactiveColor}
+          target={target}
+          {...props}
+        >
+          {children}
+        </Link>
+      )}
     </NextLink>
   )
 }
@@ -57,7 +76,7 @@ const Navbar = props => {
         align="center"
         justify="space-between"
       >
-        <Flex align="center" mr={5}>
+        <Flex align="center" mr={3}>
           <Heading as="h1" size="lg" letterSpacing={'tighter'}>
             <Logo />
           </Heading>
@@ -69,7 +88,7 @@ const Navbar = props => {
           width={{ base: 'full', md: 'auto' }}
           alignItems="center"
           flexGrow={1}
-          mt={{ base: 4, md: 0 }}
+          mt={{ base: 2, md: 0 }}
         >
           <LinkItem href="/works" path={path}>
             Works
@@ -77,10 +96,9 @@ const Navbar = props => {
           <LinkItem href="/posts" path={path}>
             Posts
           </LinkItem>
-          {/*          <LinkItem href="https://uses.craftz.dog/">
-            Uses
-  </LinkItem>*/}
-          <LinkItem href="/resume">Resume</LinkItem>
+          <LinkItem href="/resume" path={path}>
+            Resume
+          </LinkItem>
           <LinkItem
             target="_blank"
             href="https://github.com/nandanjp?tab=repositories"
@@ -105,6 +123,14 @@ const Navbar = props => {
                 icon={<HamburgerIcon />}
                 variant="outline"
                 aria-label="Options"
+                px={4}
+                py={2}
+                transition="all 0.2s"
+                borderRadius="md"
+                borderWidth="1px"
+                _hover={{ bg: 'gray.400' }}
+                _expanded={{ bg: 'blue.400' }}
+                _focus={{ boxShadow: 'outline' }}
               />
               <MenuList>
                 <NextLink href="/" passHref>
@@ -116,10 +142,15 @@ const Navbar = props => {
                 <NextLink href="/posts" passHref>
                   <MenuItem as={Link}>Posts</MenuItem>
                 </NextLink>
+
                 <NextLink href="/resume" passHref>
                   <MenuItem as={Link}>Resume</MenuItem>
                 </NextLink>
-                <MenuItem as={Link} href="https://github.com/nandanjp">
+                <MenuItem
+                  as={Link}
+                  icon={<ExternalLinkIcon />}
+                  href="https://github.com/nandanjp"
+                >
                   View Source
                 </MenuItem>
               </MenuList>

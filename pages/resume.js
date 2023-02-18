@@ -7,7 +7,7 @@ import NextLink from 'next/link'
 import thumbResume from '../public/images/resume.jpeg'
 
 const Posts = () => (
-  <Layout title="Posts">
+  <Layout title="Resume">
     <Container>
       <Heading as="h3" fontSize={20} mb={4}>
         Resume
