@@ -12,7 +12,7 @@ const VoxelDog = () => {
   const refContainer = useRef()
   const [loading, setLoading] = useState(true)
   const refRenderer = useRef()
-  const urlDogGLB = '/bedroom.glb'
+  const urlDogGLB = '/pokeball.glb'
 
   const handleWindowResize = useCallback(() => {
     const { current: renderer } = refRenderer
