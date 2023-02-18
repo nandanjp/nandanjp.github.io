@@ -1,8 +1,41 @@
-.profile {
-  rotate: 0deg;
-  transition: 0.2s all ease-in;
+.profile-image {
+  /* transition: 0.2s all cubic-bezier(0.075, 0.82, 0.165, 1); */
+  transform: rotate(90deg);
+  /* animation-duration: 0.5s;
+  animation-fill-mode: forwards; */
 }
 
-.profile:hover {
-  rotate: -90deg;
+/* .profile-image:hover {
+  animation-name: rotate-image;
+  animation-timing-function: linear;
 }
+
+@keyframes rotate-image-hover {
+  0% {
+    transform: rotate(-25deg);
+  }
+  50% {
+    transform: rotate(50deg);
+  }
+  90% {
+    transform: rotate(115deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes rotate-image-hover {
+  0% {
+    transform: rotate(-25deg);
+  }
+  50% {
+    transform: rotate(50deg);
+  }
+  90% {
+    transform: rotate(115deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+} */
