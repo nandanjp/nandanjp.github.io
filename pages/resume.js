@@ -1,7 +1,7 @@
 import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import { GridItem } from '../components/grid-item'
+import { LargeGridItem } from '../components/grid-item'
 import NextLink from 'next/link'
 
 import thumbResume from '../public/images/resume.jpeg'
@@ -19,10 +19,11 @@ const Posts = () => (
             href="https://github.com/nandanjp/resume/blob/main/resume.pdf"
             passHref
           >
-            <GridItem
+            <LargeGridItem
               title="My Resume"
               thumbnail={thumbResume}
               href="https://github.com/nandanjp/resume/blob/main/resume.pdf"
+              largeImg={true}
             />
           </NextLink>
         </SimpleGrid>
