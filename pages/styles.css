@@ -1,7 +1,6 @@
-/* .profile-image {
+.profile-image {
   transform: rotate(90deg);
-  background-size: cover;
-} */
+}
 
 /* .profile-image:hover {
   animation-name: rotate-image;
