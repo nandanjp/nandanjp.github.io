@@ -6,6 +6,7 @@ import { WorkGridItem } from '../components/grid-item'
 import thumbBlogSite from '../public/images/works/blog-site.jpg'
 import thumbNatoursSite from '../public/images/works/natours-app.jpg'
 import thumbAdminPanel from '../public/images/works/admin-app.jpg'
+import thumbThreeFirst from '../public/images/works/threejsfirst.jpg'
 
 const Works = () => (
   <Layout title="Works">
@@ -23,6 +24,17 @@ const Works = () => (
           >
             A FullStack Web App built using the MERN stack, complete with many
             features typical of those found in a modern admin panel.
+          </WorkGridItem>
+        </Section>
+        <Section>
+          <WorkGridItem
+            id="three"
+            title="Three.js Endeavors"
+            thumbnail={thumbThreeFirst}
+          >
+            A simple three.js application created to render simple objects onto
+            the web. It is my first endeavor into using this framework to work
+            with graphics on the browser.... Watch for updates to this repo!
           </WorkGridItem>
         </Section>
       </SimpleGrid>

@@ -12,22 +12,19 @@ import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
 
 const Work = () => (
-  <Layout title="Nandan's Media">
+  <Layout title="Three.js">
     <Container>
       <Title>
-        Nandan's Media <Badge>2023-</Badge>
+        Three.js <Badge>2023-</Badge>
       </Title>
       <P>
-        A very, very, VERY work in progress blog site that will be updated with
-        reviews on different kinds of media that I have had the luxury of
-        consuming over the years! Look forward to updates and analyses that are
-        to come soon...
+        My first endeavor into utilizing three.js to render graphics on the web!
       </P>
       <List ml={4} my={4}>
         <ListItem>
           <Meta>Website</Meta>
-          <Link href="https://github.com/nandanjp/personal-blog">
-            https://github.com/nandanjp/personal-blog{' '}
+          <Link href="https://github.com/nandanjp/first-threejs">
+            https://github.com/nandanjp/first-threejs{' '}
             <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
@@ -37,9 +34,7 @@ const Work = () => (
         </ListItem>
         <ListItem>
           <Meta>Stack</Meta>
-          <span>
-            NodeJS, React, Express, MongoDB {'(Possibly switching to Asp.Net)'}
-          </span>
+          <span>NodeJS, React, Three.js</span>
         </ListItem>
       </List>
     </Container>
