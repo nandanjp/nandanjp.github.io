@@ -1,9 +1,7 @@
-.profile-image {
-  /* transition: 0.2s all cubic-bezier(0.075, 0.82, 0.165, 1); */
+/* .profile-image {
   transform: rotate(90deg);
-  /* animation-duration: 0.5s;
-  animation-fill-mode: forwards; */
-}
+  background-size: cover;
+} */
 
 /* .profile-image:hover {
   animation-name: rotate-image;

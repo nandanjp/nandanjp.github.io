@@ -59,6 +59,7 @@ const Home = () => (
             display="inline-block"
             borderRadius="full"
             overflow="hidden"
+            position="relative"
           >
             <ProfileImage
               src="/images/nandan.jpg"
@@ -67,7 +68,8 @@ const Home = () => (
               borderRadius="full"
               width="100%"
               height="100%"
-              layout="fill"
+              objectFit="cover"
+              objectPosition="top -10px left 0"
             />
           </Box>
         </Box>
