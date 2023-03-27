@@ -16,13 +16,13 @@ const Posts = () => (
       <Section delay={0.1}>
         <SimpleGrid columns={[1]} gap={6}>
           <NextLink
-            href="https://github.com/nandanjp/resume/blob/main/resume.pdf"
+            href="https://github.com/nandanjp/res/blob/main/resume.pdf"
             passHref
           >
             <LargeGridItem
               title="My Resume"
               thumbnail={thumbResume}
-              href="https://github.com/nandanjp/resume/blob/main/resume.pdf"
+              href="https://github.com/nandanjp/res/blob/main/resume.pdf"
               largeImg={true}
             />
           </NextLink>
