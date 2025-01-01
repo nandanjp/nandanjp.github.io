@@ -31,7 +31,7 @@ export default function RootLayout({
                         enableSystem
                         disableTransitionOnChange
                     >
-                        <main className="relative flex-1 flex flex-col">
+                        <main className="relative flex-1 flex flex-col gap-4 sm:gap-6 md:gap-8 lg:gap-10">
                             {children}
                         </main>
                     </ThemeProvider>
