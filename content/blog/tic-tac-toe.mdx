@@ -1,0 +1,156 @@
+---
+title: Blog 1
+description: This is our first blog post
+date: 2024-03-06
+published: true
+tags: tech
+---
+
+# Creating a Tic Tac Toe Game with React
+
+Tic Tac Toe is a classic game that's perfect for learning the basics of React. In this tutorial, we'll walk through the steps of building a simple Tic Tac Toe game from scratch. By the end, you'll have a functional game and a better understanding of React fundamentals.
+
+## Getting Started
+
+Before we dive in, make sure you have Node.js and npm installed on your machine. If not, [download and install Node.js](https://nodejs.org/), which includes npm.
+
+Create a new React application using Create React App:
+
+````bash
+npx create-react-app tic-tac-toe
+cd tic-tac-toe
+
+## Project Structure
+In your project directory, you’ll mainly work with the `src` folder. Here’s the structure we’ll use:
+
+```scss
+src/
+  ├── components/
+  │   ├── Board.js
+  │   ├── Square.js
+  └── App.js
+````
+
+## Building the components
+
+### Square Component
+
+First, create the `Square` component. This component represents a single square on the Tic Tac Toe board.
+
+```jsx
+import React from "react";
+
+function Square({ value, onClick }) {
+    return (
+        <button className="square" onClick={onClick}>
+            {value}
+        </button>
+    );
+}
+
+export default Square;
+```
+
+## Board Component
+
+Next, create the `Board` component. This component renders the entire Tic Tac Toe board and handles the game logic.
+
+Create a file `src/components/Board.js`
+
+```jsx
+import React, { useState } from "react";
+import Square from "./Square";
+
+function Board() {
+    const [squares, setSquares] = useState(Array(9).fill(null));
+    const [xIsNext, setXIsNext] = useState(true);
+
+    const handleClick = (i) => {
+        const newSquares = squares.slice();
+        if (calculateWinner(squares) || squares[i]) return;
+        newSquares[i] = xIsNext ? "X" : "O";
+        setSquares(newSquares);
+        setXIsNext(!xIsNext);
+    };
+
+    const winner = calculateWinner(squares);
+    let status;
+    if (winner) {
+        status = `Winner: ${winner}`;
+    } else {
+        status = `Next player: ${xIsNext ? "X" : "O"}`;
+    }
+
+    return (
+        <div>
+            <div>{status}</div>
+            <div>
+                {[0, 1, 2].map((row) => (
+                    <div key={row}>
+                        {[0, 1, 2].map((col) => (
+                            <Square
+                                key={row * 3 + col}
+                                value={squares[row * 3 + col]}
+                                onClick={() => handleClick(row * 3 + col)}
+                            />
+                        ))}
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+}
+
+function calculateWinner(squares) {
+    const lines = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6],
+    ];
+    for (let i = 0; i < lines.length; i++) {
+        const [a, b, c] = lines[i];
+        if (
+            squares[a] &&
+            squares[a] === squares[b] &&
+            squares[a] === squares[c]
+        ) {
+            return squares[a];
+        }
+    }
+    return null;
+}
+
+export default Board;
+```
+
+## App Component
+
+Finally, use the `Board` component in the `App` component.
+
+```jsx
+import React from "react";
+import Board from "./components/Board";
+import "./App.css";
+
+function App() {
+    return (
+        <div className="App">
+            <h1>Tic Tac Toe</h1>
+            <Board />
+        </div>
+    );
+}
+
+export default App;
+```
+
+## Conclusion
+
+Congratulations! You’ve built a functional Tic Tac Toe game using React. This simple project demonstrates key React concepts such as components, state, and event handling. From here, you can extend the game with features like a restart button, score tracking, or an AI opponent.
+
+Feel free to experiment and customize the game to suit your preferences. Happy coding!
