@@ -1,9 +1,8 @@
-import Link from "next/link";
-import { Footer, siteConfig } from "@/lib/config";
-import { buttonVariants } from "@/components/ui/button";
 import { Icons } from "@/components/common/icons";
-import { ModeToggle } from "./mode-toggle";
+import { buttonVariants } from "@/components/ui/button";
+import { Footer, siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export function SiteFooter() {
     return (
