@@ -12,7 +12,13 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+    Sheet,
+    SheetContent,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@/components/ui/sheet";
 import { ModeToggle } from "./mode-toggle";
 import { cn } from "@/lib/utils";
 
@@ -32,6 +38,9 @@ export function MobileNav() {
                 </Button>
             </SheetTrigger>
             <SheetContent side="left" className="flex h-full flex-col">
+                <SheetHeader>
+                    <SheetTitle></SheetTitle>
+                </SheetHeader>
                 <MobileLink
                     href="/"
                     className="flex items-center"
