@@ -11,9 +11,11 @@ import {
 } from "@/server/api/spotify/auth";
 
 export const createTRPCContext = async (opts: { headers: Headers }) => {
+    const ip = opts.headers.get("x-forwarded-for");
     return {
         db,
         redis,
+        ip,
         ...opts,
     };
 };

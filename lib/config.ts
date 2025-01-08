@@ -1,7 +1,7 @@
 export const siteConfig = {
-    name: "nandanjp/todo",
+    name: "Nandan",
     url: "localhost:3000",
-    description: "Just a typical, simple Todo Application you know?",
+    description: "Nandan's personal website",
     links: {
         twitter: "https://twitter.com/",
         github: "https://github.com/nandanjp",
@@ -31,163 +31,37 @@ export interface SidebarNavItem {
 }
 
 export interface DocsConfig {
-    mainNav: MainNavItem[];
-    sidebarNav: SidebarNavItem[];
+    mainNav: { title: string; href: string }[];
+    sidebarNav: { title: string; href: string }[];
 }
 
 export const docsConfig: DocsConfig = {
     mainNav: [
         {
-            trigger: "Lobby",
-            items: [
-                {
-                    title: "Products",
-                    href: "/product",
-                    description: "All products offerred",
-                },
-                {
-                    title: "Shoes",
-                    href: "/shoes",
-                    description: "Browse shoes LOLL.",
-                },
-                {
-                    title: "Clothing",
-                    href: "/clothing",
-                    description: "Browse clothing LOLL.",
-                },
-                {
-                    title: "Blog",
-                    href: "/blog",
-                    description: "Read up on stuff.",
-                },
-            ],
+            title: "Blog",
+            href: "/blog",
         },
         {
-            trigger: "Shoes",
-            items: [
-                {
-                    title: "All",
-                    href: "/shoes",
-                    description: "All shoes that are currently being sold",
-                },
-                {
-                    title: "Low Tops",
-                    href: `/shoes?type="low-tops"`,
-                    description: "Discover all low top shoes being offered",
-                },
-                {
-                    title: "High Tops",
-                    href: `/shoes?type="high-tops"`,
-                    description: "Discover all high top shoes being offered",
-                },
-                {
-                    title: "Slip-ons",
-                    href: `/shoes?type="slip-ons"`,
-                    description: "Discover all slip-ons being offered",
-                },
-            ],
+            title: "Works",
+            href: "/works",
         },
         {
-            trigger: "Clothing",
-            items: [
-                {
-                    title: "All",
-                    href: "/clothing",
-                    description: "All clothing that are currently being sold",
-                },
-                {
-                    title: "T-shirts",
-                    href: `/clothing?type="t-shirts"`,
-                    description: "Discover all t-shirts being offered",
-                },
-                {
-                    title: "Hoodies",
-                    href: `/clothing?type="hoodies"`,
-                    description: "Discover all hoodies being offered",
-                },
-                {
-                    title: "Pants",
-                    href: `/clothing?type="pants"`,
-                    description: "Discover all pants being offered",
-                },
-            ],
+            title: "Resume",
+            href: "/resume",
         },
     ],
     sidebarNav: [
         {
-            title: "Lobby",
-            items: [
-                {
-                    title: "Products",
-                    href: "/product",
-                    items: [],
-                },
-                {
-                    title: "Shoes",
-                    href: "/shoes",
-                    items: [],
-                },
-                {
-                    title: "Clothing",
-                    href: "/clothing",
-                    items: [],
-                },
-                {
-                    title: "Blog",
-                    href: "/blog",
-                    items: [],
-                },
-            ],
+            title: "Blog",
+            href: "/blog",
         },
         {
-            title: "Shoes",
-            items: [
-                {
-                    title: "All",
-                    href: "/shoes",
-                    items: [],
-                },
-                {
-                    title: "Low Tops",
-                    href: `/shoes?type="low-tops"`,
-                    items: [],
-                },
-                {
-                    title: "High Tops",
-                    href: `/shoes?type="high-tops"`,
-                    items: [],
-                },
-                {
-                    title: "Slip-ons",
-                    href: `/shoes?type="slip-ons"`,
-                    items: [],
-                },
-            ],
+            title: "Works",
+            href: "/works",
         },
         {
-            title: "Clothing",
-            items: [
-                {
-                    title: "All",
-                    href: "/clothing",
-                    items: [],
-                },
-                {
-                    title: "T-shirts",
-                    href: `/clothing?type="t-shirts"`,
-                    items: [],
-                },
-                {
-                    title: "Hoodies",
-                    href: `/clothing?type="hoodies"`,
-                    items: [],
-                },
-                {
-                    title: "Pants",
-                    href: `/clothing?type="pants"`,
-                    items: [],
-                },
-            ],
+            title: "Resume",
+            href: "/resume",
         },
     ],
 };
@@ -196,28 +70,16 @@ export const Footer = [
     {
         section: "Credits",
         items: [
-            "OneStopShop",
-            "Acme Corp",
-            "craft.mxkaske.dev",
-            "Taxonomy",
             "shadcn/ui",
+            "supabase",
+            "resend",
+            "upstash",
+            "drizzle",
+            "trpc",
         ],
-    },
-    {
-        section: "Help",
-        items: ["About", "Contact", "Terms", "Privacy"],
     },
     {
         section: "Social",
-        items: ["X", "GitHub", "Discord", "cat.com"],
-    },
-    {
-        section: "Lofi",
-        items: [
-            "beats to study to",
-            "beats to chill to",
-            "a fresh start",
-            "coffee to go",
-        ],
+        items: ["X", "GitHub", "Discord", "LinkedIn"],
     },
 ];

@@ -1,17 +1,6 @@
 "use client";
 
-import { AlignJustifyIcon } from "lucide-react";
-import Link, { LinkProps } from "next/link";
-import { useRouter } from "next/navigation";
-import React, { useState } from "react";
-import { docsConfig } from "@/lib/config";
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
     Sheet,
     SheetContent,
@@ -19,8 +8,13 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet";
-import { ModeToggle } from "./mode-toggle";
+import { docsConfig, siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
+import { AlignJustifyIcon } from "lucide-react";
+import Link, { LinkProps } from "next/link";
+import { useRouter } from "next/navigation";
+import React, { useState } from "react";
+import { ModeToggle } from "./mode-toggle";
 
 export function MobileNav() {
     const [open, setOpen] = useState<boolean>(false);
@@ -39,43 +33,33 @@ export function MobileNav() {
             </SheetTrigger>
             <SheetContent side="left" className="flex h-full flex-col">
                 <SheetHeader>
-                    <SheetTitle></SheetTitle>
-                </SheetHeader>
-                <MobileLink
-                    href="/"
-                    className="flex items-center"
-                    onOpenChange={setOpen}
-                >
-                    <span className="text-lg font-bold">Sadmn Rec</span>
-                </MobileLink>
-                <div className="flex h-full w-full flex-1 flex-col">
-                    <Accordion
-                        type="single"
-                        collapsible
-                        className="w-full flex-1"
-                    >
-                        {docsConfig.sidebarNav.map((item) => (
-                            <AccordionItem key={item.title} value={item.title}>
-                                <AccordionTrigger>
-                                    {item.title}
-                                </AccordionTrigger>
-                                <AccordionContent className="text-muted-foreground flex flex-col justify-center gap-2">
-                                    {item.items.map((i) => (
-                                        <Link
-                                            href={i.href}
-                                            className="hover:text-foreground transition-all duration-75 ease-in"
-                                            key={i.href}
-                                        >
-                                            {i.title}
-                                        </Link>
-                                    ))}
-                                </AccordionContent>
-                            </AccordionItem>
-                        ))}
-                    </Accordion>
-                    <div className="flex w-full items-center justify-end gap-2">
+                    <SheetTitle className="flex items-center justify-between pt-6">
+                        <MobileLink
+                            href="/"
+                            className="flex items-center"
+                            onOpenChange={setOpen}
+                        >
+                            <span className="text-lg font-bold">
+                                {siteConfig.name}
+                            </span>
+                        </MobileLink>
                         <ModeToggle />
-                    </div>
+                    </SheetTitle>
+                </SheetHeader>
+                <div className="flex h-full w-full flex-1 flex-col">
+                    {docsConfig.sidebarNav.map((item) => (
+                        <Link
+                            href={item.href}
+                            className={cn(
+                                buttonVariants({ variant: "link" }),
+                                "w-fit"
+                            )}
+                            key={item.href}
+                        >
+                            {item.title}
+                        </Link>
+                    ))}
+                    <div className="flex w-full items-center justify-end gap-2"></div>
                 </div>
             </SheetContent>
         </Sheet>

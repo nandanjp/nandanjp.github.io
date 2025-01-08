@@ -1,15 +1,14 @@
-import Link from "next/link";
-import React from "react";
 import {
     NavigationMenu,
-    NavigationMenuContent,
     NavigationMenuItem,
     NavigationMenuLink,
     NavigationMenuList,
-    NavigationMenuTrigger,
+    navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { docsConfig, siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import React from "react";
 
 export function MainNav() {
     return (
@@ -22,24 +21,18 @@ export function MainNav() {
             <NavigationMenu>
                 <NavigationMenuList>
                     {docsConfig.mainNav.map((item) => (
-                        <NavigationMenuItem key={item.trigger}>
-                            <NavigationMenuTrigger>
-                                {item.trigger}
-                            </NavigationMenuTrigger>
-                            <NavigationMenuContent>
-                                <ul className="grid grid-cols-2 gap-2 p-4 md:w-[300px] lg:w-[400px]">
-                                    {item.items.map((i) => (
-                                        <ListItem
-                                            key={i.title}
-                                            href={i.href}
-                                            title={i.title}
-                                        >
-                                            {i.description}
-                                        </ListItem>
-                                    ))}
-                                </ul>
-                            </NavigationMenuContent>
-                        </NavigationMenuItem>
+                        <Link
+                            key={item.href}
+                            href={item.href}
+                            legacyBehavior
+                            passHref
+                        >
+                            <NavigationMenuLink
+                                className={navigationMenuTriggerStyle()}
+                            >
+                                {item.title}
+                            </NavigationMenuLink>
+                        </Link>
                     ))}
                     <NavigationMenuItem></NavigationMenuItem>
                 </NavigationMenuList>

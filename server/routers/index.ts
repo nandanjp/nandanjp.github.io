@@ -6,6 +6,7 @@ import {
 import { z } from "zod";
 import { spotifyRouter } from "@/server/api/spotify";
 import { githubRouter } from "@/server/api/github";
+import { emailRouter } from "./email";
 
 export const appRouter = createTRPCRouter({
     hello: publicProcedure
@@ -21,6 +22,7 @@ export const appRouter = createTRPCRouter({
         }),
     spotify: spotifyRouter,
     github: githubRouter,
+    email: emailRouter,
 });
 
 // export type definition of API

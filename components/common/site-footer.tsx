@@ -7,7 +7,7 @@ import Link from "next/link";
 export function SiteFooter() {
     return (
         <footer className="mx-auto flex w-full max-w-screen-xl flex-col justify-between gap-6 border-t-2 p-7 md:p-9 lg:px-12 xl:px-16">
-            <div className="container grid w-full max-w-screen-2xl grid-cols-2 justify-start gap-12 sm:grid-cols-4 sm:gap-6 md:gap-4">
+            <div className="container grid w-full max-w-screen-2xl grid-cols-2 justify-start gap-12 justify-items-center sm:gap-6 md:gap-4">
                 {Footer.map((f) => (
                     <ul className="flex flex-col gap-3" key={f.section}>
                         <li className="text-base font-semibold">{f.section}</li>

@@ -229,3 +229,25 @@ export const artistToAlbum = pgTable(
         }),
     ]
 );
+
+export const emails = pgTable(
+    "emails",
+    {
+        id: uuid("id").primaryKey().notNull().defaultRandom(),
+        senderEmail: varchar("sender_email", { length: 255 }),
+        timesSent: integer("times_sent").notNull().default(0),
+        createdAt: timestamp("created_at", {
+            withTimezone: true,
+            mode: "string",
+        })
+            .default(sql`CURRENT_TIMESTAMP`)
+            .notNull(),
+        updatedAt: timestamp("updated_at", {
+            withTimezone: true,
+            mode: "string",
+        })
+            .default(sql`CURRENT_TIMESTAMP`)
+            .notNull(),
+    },
+    (table) => [unique().on(table.senderEmail).nullsNotDistinct()]
+);
