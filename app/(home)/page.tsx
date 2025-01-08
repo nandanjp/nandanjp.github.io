@@ -1,4 +1,5 @@
 import { Icons } from "@/components/common/icons";
+import { SongsTable } from "@/components/tables/songs/table";
 import {
     Accordion,
     AccordionContent,
@@ -23,6 +24,7 @@ import {
     TypographyP,
 } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
+import { api } from "@/trpc/server";
 import { ArrowRight, BookUser, List } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -73,7 +75,22 @@ const experiences = [
     },
 ] as const;
 
-export default function Home() {
+export default async function Home() {
+    const tracks = await api.spotify.getTracksByIds({
+        ids: [
+            "172fMG26G2OoEzzg0wn26r",
+            "6megNXGjmim4OitjZnIn9v",
+            "3J99JXowSczha1Cp0LtFoc",
+            "1JrxwbZ9u0VNwemdcJwZNi",
+            "45J4avUb9Ni0bnETYaYFVJ",
+            "1PH2MDbcBAU094DlgTIND1",
+            "37bNBNB332HXbSy6079cws",
+            "3KVOfGrYVjoP1w8T2HVltm",
+            "4cPwi7lcWxRQNEb4xC77fC",
+            "23dl021k6ZO3afFgS6TLr7",
+        ],
+    });
+
     return (
         <div className="flex flex-col gap-8 md:gap-16 lg:gap-24 items-center container max-w-screen-lg mx-auto">
             <div className="grid lg:grid-cols-2 items-center justify-items-center gap-4">
@@ -303,7 +320,7 @@ export default function Home() {
             <div className="flex flex-col gap-8 w-full">
                 <TypographyH1>Hobbies</TypographyH1>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 items-center justify-items-center">
-                    {[1, 2, 3, 4, 5, 6].map((project) => (
+                    {[1, 2, 3].map((project) => (
                         <Card key={`project-${project}`} className="max-w-sm">
                             <Card className="mb-2">
                                 <Image
@@ -354,6 +371,7 @@ export default function Home() {
                         </Card>
                     ))}
                 </div>
+                <SongsTable rows={tracks} />
             </div>
         </div>
     );

@@ -6,7 +6,6 @@ else {
     const globalConnection = global as typeof globalThis & {
         redis: Redis;
     };
-
     if (!globalConnection.redis) globalConnection.redis = Redis.fromEnv();
     redis = globalConnection.redis;
 }

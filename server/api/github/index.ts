@@ -1,16 +1,7 @@
-import { createTRPCRouter, spotifyProcedure } from "@/server/trpc";
+import { createTRPCRouter } from "@/server/trpc";
+import { getRepoLanguages, getRepos } from "./repo";
 
 export const githubRouter = createTRPCRouter({
-    allTracks: spotifyProcedure.query(async ({ ctx }) => {
-        return await ctx.db.query.track.findMany();
-    }),
-    allArtists: spotifyProcedure.query(async ({ ctx }) => {
-        return await ctx.db.query.artist.findMany();
-    }),
-    allAlbums: spotifyProcedure.query(async ({ ctx }) => {
-        return await ctx.db.query.album.findMany();
-    }),
-    allPlaylists: spotifyProcedure.query(async ({ ctx }) => {
-        return await ctx.db.query.playlist.findMany();
-    }),
+    getRepos,
+    getRepoLanguages,
 });

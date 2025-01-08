@@ -7,7 +7,11 @@ import { GET_TOKEN_ENDPOINT } from "./endpoints";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const authRequestSchema = z
     .object({
-        grant_type: z.enum(["client_credentials", "refresh_token"]),
+        grant_type: z.enum([
+            "client_credentials",
+            "refresh_token",
+            "authorization_code",
+        ]),
         client_id: z.string().optional(),
         client_secret: z.string().optional(),
         refresh_token: z.string().optional(),
@@ -33,6 +37,7 @@ const authResponseSchema = z.object({
         done: z.boolean(),
     }), //BuiltinIteratorReturn
     expires_in: z.number(),
+    refresh_token: z.string(),
 });
 
 export const getSpotifyToken = () =>
@@ -41,12 +46,13 @@ export const getSpotifyToken = () =>
             GET_TOKEN_ENDPOINT,
             qs.stringify({
                 grant_type: "client_credentials",
-                client_id: env.SPOTIFY_CLIENT_ID,
-                client_secret: env.SPOTIFY_CLIENT_SECRET,
             } as z.infer<typeof authRequestSchema>),
             {
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded",
+                    Authorization: `Basic ${Buffer.from(
+                        env.SPOTIFY_CLIENT_ID + ":" + env.SPOTIFY_CLIENT_SECRET
+                    ).toString("base64")}`,
                 },
             }
         )
@@ -65,6 +71,7 @@ export const getSpotifyTokenFromRefresh = (refreshToken: string) =>
             qs.stringify({
                 grant_type: "refresh_token",
                 refresh_token: refreshToken,
+                client_id: env.SPOTIFY_CLIENT_ID,
             } as z.infer<typeof authRequestSchema>),
             {
                 headers: {
@@ -75,7 +82,7 @@ export const getSpotifyTokenFromRefresh = (refreshToken: string) =>
         .then((res) => res.data as z.infer<typeof authResponseSchema>)
         .catch((e) => {
             throw new Error(
-                "failed to retrieve and set spotify token to redis:",
+                "failed to retrieve and set spotify token to redis from refresh:",
                 e
             );
         });
