@@ -3,6 +3,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { Footer, siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { EmailForm } from "@/components/common/email";
 
 export function SiteFooter() {
     return (
@@ -23,11 +24,12 @@ export function SiteFooter() {
                 ))}
             </div>
             <div className="flex w-full items-center justify-between">
-                <p className="text-muted-foreground text-sm leading-7 [&:not(:first-child)]:mt-6">
+                <p className="text-muted-foreground text-sm leading-7 [&:not(:first-child)]:mt-6 hidden sm:block">
                     Built by{" "}
                     <span className="text-secondary-foreground">nandanjp</span>
                 </p>
                 <div className="flex items-center gap-4">
+                    <EmailForm />
                     <Link
                         href={siteConfig.links.github}
                         target="_blank"

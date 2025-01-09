@@ -22,7 +22,7 @@ const FormSchema = z.object({
     }),
 });
 
-export function InputForm() {
+export function EmailForm() {
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
         defaultValues: {

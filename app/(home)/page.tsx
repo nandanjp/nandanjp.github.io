@@ -179,7 +179,7 @@ export default async function Home() {
                 </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center justify-items-center">
-                <Card className="max-w-sm size-full">
+                <Card className="size-full">
                     <CardHeader>
                         <CardTitle className="text-2xl">Skills</CardTitle>
                     </CardHeader>
@@ -191,7 +191,7 @@ export default async function Home() {
                         ))}
                     </CardContent>
                 </Card>
-                <Card className="max-w-sm size-full">
+                <Card className="size-full">
                     <CardHeader>
                         <CardTitle className="text-2xl">Technologies</CardTitle>
                     </CardHeader>
@@ -248,7 +248,7 @@ export default async function Home() {
                 </Card>
             </div>
             <div className="flex flex-col gap-8 w-full">
-                <div className="flex items-center justify-between gap-4 w-full">
+                <div className="flex items-center justify-between gap-4 container mx-auto">
                     <TypographyH1>Projects</TypographyH1>
                     <Link
                         href={"/projects"}
@@ -258,7 +258,7 @@ export default async function Home() {
                         <ArrowRight className="size-4 resize-none shrink-0 group-hover:translate-x-1 transition-all duration-300" />
                     </Link>
                 </div>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 items-center justify-items-center">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 items-center justify-items-center">
                     {[1, 2, 3].map((project, i) => (
                         <Card
                             key={`project-${project}`}
@@ -318,60 +318,12 @@ export default async function Home() {
                 </div>
             </div>
             <div className="flex flex-col gap-8 w-full">
-                <TypographyH1>Hobbies</TypographyH1>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 items-center justify-items-center">
-                    {[1, 2, 3].map((project) => (
-                        <Card key={`project-${project}`} className="max-w-sm">
-                            <Card className="mb-2">
-                                <Image
-                                    src={"/images/content/haikyuu.jpeg"}
-                                    alt="profile-image"
-                                    width={960}
-                                    height={540}
-                                    className="object-contain rounded-lg"
-                                />
-                            </Card>
-                            <CardContent className="px-4">
-                                <TypographyH4>Project 1</TypographyH4>
-                                <TypographyMuted>
-                                    April 2024 - March 2024
-                                </TypographyMuted>
-                                <TypographyP className="leading-tight my-0">
-                                    Developed an AI Customer Support Chatbot
-                                    which automatically responds to customer
-                                    support tickets using the latest GPT models.
-                                </TypographyP>
-                            </CardContent>
-                            <CardFooter className="flex flex-col gap-4 items-start p-4 pt-0">
-                                <div className="flex items-center gap-1 flex-wrap">
-                                    {skills.slice(12).map((skill) => (
-                                        <Badge
-                                            variant={"secondary"}
-                                            key={skill}
-                                        >
-                                            {skill}
-                                        </Badge>
-                                    ))}
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <Link
-                                        href={`https://github.com`}
-                                        className={cn(
-                                            buttonVariants({
-                                                variant: "default",
-                                            }),
-                                            "group relative"
-                                        )}
-                                    >
-                                        <Icons.gitHub className="size-4 shrink-0 resize-none inline" />{" "}
-                                        Source
-                                    </Link>
-                                </div>
-                            </CardFooter>
-                        </Card>
-                    ))}
+                <TypographyH1 className="container mx-auto">
+                    Hobbies
+                </TypographyH1>
+                <div className="container mx-auto">
+                    <SongsTable rows={tracks} />
                 </div>
-                <SongsTable rows={tracks} />
             </div>
         </div>
     );
